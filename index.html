@@ -26,7 +26,7 @@
     function renderMenu() {
       clearInterval(timer);
       app.innerHTML = `
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Selecciona una tabla</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Aitana Vamos a Empezar! Selecciona una tabla</h2>
         <div class="grid grid-cols-5 gap-4">
           ${Array.from({ length: 10 }, (_, i) => `
             <button onclick="startPractice(${i + 1})"
@@ -93,7 +93,7 @@
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
                 </svg>`}
               <p class="ml-2 text-lg font-semibold ${isCorrect ? 'text-green-600' : 'text-red-600'}">
-                ${isCorrect ? '¡Correcto!' : `Incorrecto. La respuesta era ${current.result}.`}
+                ${isCorrect ? '¡Correcto Aitana!' : `Incorrecto Aitana ☹️. La respuesta era ${current.result}.`}
               </p>
             </div>
             <button onclick="nextProblem()" class="mt-6 w-full max-w-xs py-3 bg-blue-500 text-white text-xl font-bold rounded-xl shadow-md hover:bg-blue-600 transition">
@@ -103,7 +103,6 @@
         </div>
       `;
 
-      // Solo actualizar el contador sin re-renderizar en móviles
       if (!/Mobi|Android/i.test(navigator.userAgent)) {
         startTimer();
       } else {
@@ -142,7 +141,7 @@
       answer = '';
       isCorrect = null;
       if (index >= problems.length) {
-        alert(`¡Felicidades, terminaste la tabla del ${number}!\nTu puntuación: ${correctCount}/10`);
+        alert(`¡Felicidades Aitana, terminaste la tabla del ${number}!\nTu puntuación: ${correctCount}/10`);
         renderMenu();
         return;
       }
